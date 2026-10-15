@@ -82,6 +82,9 @@ export async function PublicEnvScript({
 
   return (
     <script
+      // Scripts inline já executaram antes da hidratação; ambientes que injetam
+      // <script> no <head> (preview do v0, extensões) deslocam a ordem dos irmãos.
+      suppressHydrationWarning
       // Conteúdo derivado de env do servidor (não de input do usuário).
       dangerouslySetInnerHTML={{ __html: `window.__PUBLIC_ENV__=${payload};` }}
     />
