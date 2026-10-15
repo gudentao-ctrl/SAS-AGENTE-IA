@@ -336,7 +336,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         {/* Config pública do Supabase + marca resolvida, em runtime (imagem
             genérica self-host). */}
         <MarcaNoNavegador />
-        <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
+        <script suppressHydrationWarning dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
       </head>
       {/*
         `min-h-dvh` e não `min-h-screen`: `100vh` é a janela com a barra de
